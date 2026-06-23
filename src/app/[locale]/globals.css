@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+/* @theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-kotayk: KotaykR;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-image: url(/public/18573a5cd93765380000d7d7df8875a80701e7c0.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@font-face {
+  font-family: "KotaykR";
+  src: url("/fonts/KotaykR.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.imganim1{
+  animation: imganime 3s infinite ease;
+}
+
+.imganim2{
+  animation: imganime2 3s infinite ease;
+}
+
+
+@keyframes imganime {
+  from {
+    left:0;
+    opacity: 1;
+  }
+
+  to{
+    left: -40%;
+    opacity: 0.2;
+  }
+}
+
+
+@keyframes imganime2 {
+  from {
+    left:0;
+    opacity: 1;
+  }
+
+  to{
+    left: 40%;
+    opacity: 0.2;
+  }
+} */
+
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-adobe: var(--font-adobe);
+  --font-kotayk: var(--font-kotayk);
+  --font-bruney: var(--font-bruney);
+
+}
+
+
+.grad {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.89), rgba(255, 255, 255, 0.05));
+}
+
+.imganim1 {
+  animation: imganime 3s infinite ease;
+}
+
+.imganim2 {
+  animation: imganime2 3s infinite ease;
+}
+
+@keyframes imganime {
+  from {
+    left: 0;
+    opacity: 1;
+  }
+
+  to {
+    left: -40%;
+    opacity: 0.2;
+  }
+}
+
+@keyframes imganime2 {
+  from {
+    left: 0;
+    opacity: 1;
+  }
+
+  to {
+    left: 40%;
+    opacity: 0.2;
+  }
+}
