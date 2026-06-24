@@ -32,6 +32,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "vs-invitation.ayandesign.am",
       },
+      {
+        protocol: "https",
+        hostname: "dl-invitation.ayandesign.am",
+      },
     ],
   },
 };

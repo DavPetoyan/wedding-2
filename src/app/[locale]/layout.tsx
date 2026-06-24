@@ -1,55 +1,3 @@
-// import type { Metadata } from "next";
-// import { Geist, Geist_Mono } from "next/font/google";
-// import "./globals.css";
-// import { getMessages } from "next-intl/server";
-// import { hasLocale, NextIntlClientProvider } from "next-intl";
-// import { notFound } from "next/navigation";
-// import { routing } from "@/src/i18n/routing";
-
-
-// type Props = {
-//   children: React.ReactNode;
-//   params: Promise<{ locale: string }>;
-// };
-
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
-
-// export const metadata: Metadata = {
-//   title: "Invitation",
-//   description: "Elegant invitation website",
-// };
-
-// export default async function LocaleLayout({ children, params }: Props) {
-//   const { locale } = await params;
-
-//   if (!hasLocale(routing.locales, locale)) {
-//     notFound();
-//   }
-
-//   const messages = await getMessages();
-
-//   return (
-//     <html
-//       lang={locale}
-//     >
-//       <body className="min-h-full flex flex-col">
-//         <NextIntlClientProvider messages={messages}>
-//           {children}
-//         </NextIntlClientProvider>
-//       </body>
-//     </html>
-//   );
-// }
-
-
 
 import type { Metadata } from "next";
 import "./globals.css";
@@ -61,31 +9,76 @@ import { routing } from "@/src/i18n/routing";
 
 import localFont from "next/font/local";
 
-// ===== FONTS =====
+// const kotayk = localFont({
+//   src: [
+//     {
+//       path: "../fonts/Kotayk-Regular.woff2",
+//       weight: "400",
+//       style: "normal",
+//     },
+//     {
+//       path: "../fonts/Kotayk-Italic.woff2",
+//       weight: "400",
+//       style: "italic",
+//     },
+//   ],
+//   variable: "--font-kotayk",
+// });
+
 const kotayk = localFont({
-  src: [
-    {
-      path: "../fonts/Kotayk-Regular.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../fonts/Kotayk-Italic.woff2",
-      weight: "400",
-      style: "italic",
-    },
-  ],
+  src: "../fonts/Kotayk.ttf",
   variable: "--font-kotayk",
+})
+
+const juana = localFont({
+  src: "../fonts/Fontspring-DEMO-juana-medium.otf",
+  variable: "--font-juana",
 });
 
 const adobe = localFont({
-  src: "../fonts/adobe-clean-serif.woff2",
+  src: "../fonts/adobe-clean-serif.ttf",
   variable: "--font-adobe",
 });
 
 const bruney = localFont({
-  src: "../fonts/ss-bruney.woff2",
+  src: "../fonts/ss-bruney.otf",
   variable: "--font-bruney",
+});
+
+const notoArmenian = localFont({
+  src: [
+    {
+      path: "../fonts/NotoSansArmenian-Thin.ttf",
+      weight: "100",
+      style: "normal",
+    },
+    {
+      path: "../fonts/NotoSansArmenian-ExtraLight.ttf",
+      weight: "200",
+      style: "normal",
+    },
+    {
+      path: "../fonts/NotoSansArmenian-Light.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../fonts/NotoSansArmenian-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../fonts/NotoSansArmenian-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../fonts/NotoSansArmenian-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-noto-armenian",
 });
 
 export const metadata: Metadata = {
@@ -114,6 +107,9 @@ export default async function LocaleLayout({ children, params }: Props) {
           ${kotayk.variable}
           ${adobe.variable}
           ${bruney.variable}
+          ${kotayk.variable}
+          ${juana.variable}
+          ${notoArmenian.variable}
           min-h-screen flex flex-col
         `}
       >

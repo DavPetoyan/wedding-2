@@ -1,75 +1,15 @@
 @import "tailwindcss";
 
-/* @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-kotayk: KotaykR;
-}
-
-body {
-  width: 100%;
-  height: 100vh;
-  background-image: url(/public/18573a5cd93765380000d7d7df8875a80701e7c0.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-@font-face {
-  font-family: "KotaykR";
-  src: url("/fonts/KotaykR.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-}
-
-.imganim1{
-  animation: imganime 3s infinite ease;
-}
-
-.imganim2{
-  animation: imganime2 3s infinite ease;
-}
-
-
-@keyframes imganime {
-  from {
-    left:0;
-    opacity: 1;
-  }
-
-  to{
-    left: -40%;
-    opacity: 0.2;
-  }
-}
-
-
-@keyframes imganime2 {
-  from {
-    left:0;
-    opacity: 1;
-  }
-
-  to{
-    left: 40%;
-    opacity: 0.2;
-  }
-} */
-
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
   --font-adobe: var(--font-adobe);
   --font-kotayk: var(--font-kotayk);
   --font-bruney: var(--font-bruney);
-
+  --font-juana: var(--font-juana);
+  --font-noto-armenian: var(--font-noto-armenian);
 }
+
+
 
 
 .grad {
@@ -105,5 +45,109 @@ body {
   to {
     left: 40%;
     opacity: 0.2;
+  }
+}
+
+
+
+@media screen and (max-width:480px) {
+  .medText{
+    left: 140px;
+    font-size: 40px;
+  }
+
+  .medText2{
+    left: 44px;
+    font-size: 40px;
+  }
+}
+
+
+@media screen and (max-width:420px) {
+  .medText{
+    left: 120px;
+    font-size: 40px;
+  }
+
+  .medText2{
+    left: 24px;
+    font-size: 40px;
+  }
+}
+
+
+@media screen and (max-width:380px) {
+  .medText{
+    left: 100px;
+    font-size: 40px;
+  }
+
+  .medText2{
+    left: 4px;
+    font-size: 40px;
+  }
+
+  .inviteText{
+    font-size: 32px;
+  }
+  .medMonth{
+    font-size: 26px;
+  }
+  .medCal{
+    width: 320px;
+  }
+  .medNumbers{
+    width: 320px;
+  }
+}
+
+@media screen and (max-width:350px) {
+  .medText{
+    left: 80px;
+    font-size: 40px;
+  }
+
+  .medText2{
+    left: -16px;
+    font-size: 40px;
+  }
+
+  .inviteText{
+    font-size: 30px;
+  }
+  .medMonth{
+    font-size: 24px;
+  }
+  .medCal{
+    width: 316px;
+    padding: 0px 4px;
+  }
+  .medNumbers{
+    width: 316px;
+  }
+  .medNumber{
+    width: 14px;
+  }
+}
+
+
+@media screen and (max-width:330px) {
+  .medNumber{
+    width: 12px;
+  }
+  .medDay{
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width:320px) {
+  .medText{
+    left: 72px;
+    font-size: 40px;
+  }
+
+  .medText2{
+    left: -24px;
+    font-size: 40px;
   }
 }

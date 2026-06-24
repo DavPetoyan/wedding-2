@@ -1,22 +1,52 @@
 "use client"
 
+
+import Calendar from "@/components/calendar";
+import MainText from "@/components/mainText";
 import Navbar from "@/components/navbar";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import DayCart from "@/components/dayCart";
+import DayCartSec from "@/components/dayCartSec";
 
 export default function Home() {
-
   const [introDone, setIntroDone] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const [audioPlaying, setAudioPlaying] = useState(false)
+  const [audioPlaying, setAudioPlaying] = useState(false);
+  const [scrollLocked, setScrollLocked] = useState(true);
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setIntroDone(true);
+      setScrollLocked(false);
     }, 2200);
 
     return () => clearTimeout(timer);
   }, []);
 
+
+
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+
+    const timer = setTimeout(() => {
+      setIntroDone(true);
+      document.body.style.overflow = "auto";
+    }, 2200);
+
+    return () => {
+      clearTimeout(timer);
+      document.body.style.overflow = "auto";
+    };
+  }, []);
+
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const toggleAudio = async () => {
     if (!audioRef.current) return;
@@ -34,17 +64,17 @@ export default function Home() {
     }
   };
 
+  const t = useTranslations("Hero");
+  const e = useTranslations("Events");
 
   return (
-
     <>
       <audio ref={audioRef}>
-        <source
-          src="/Ordinary.mp3"
-          type="audio/mp3"
-        />
+        <source src="/Ordinary.mp3" type="audio/mp3" />
       </audio>
+
       <div className="w-full min-h-screen relative overflow-hidden bg-cover bg-center bg-no-repeat">
+
 
         {!introDone && (
           <div className="relative w-full h-screen flex">
@@ -63,13 +93,16 @@ export default function Home() {
           </div>
         )}
 
-        <div
-          className={`
-          max-w-130 mx-auto h-161
-          bg-center bg-cover bg-no-repeat
-          transition-all duration-1000 ease-out relative
-          ${introDone ? "opacity-100 scale-100" : "opacity-0 scale-105"}
-          `}
+
+        <motion.div
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={
+            introDone
+              ? { opacity: 1, scale: 1 }
+              : { opacity: 0, scale: 1.05 }
+          }
+          transition={{ duration: 1 }}
+          className="max-w-130 mx-auto h-161 bg-center bg-cover bg-no-repeat relative"
           style={{
             backgroundImage:
               "url('https://dl-invitation.ayandesign.am/1.png')",
@@ -77,18 +110,98 @@ export default function Home() {
         >
           <div className="grad w-full h-full absolute top-0 left-0 pt-4 px-2 sm:px-3 lg:px-4">
             <Navbar />
+            <MainText />
           </div>
-        </div>
-        <div className="max-w-130 mx-auto bg-cover bg-center bg-no-repeat " style={{
-          backgroundImage:
-            "url('./18573a5cd93765380000d7d7df8875a80701e7c0.jpg')",
-        }} >
-          <div className="w-full py-3.25 flex items-center justify-center h-full border relative ">
-            <div className="w-17 h-17 rounded-full  flex justify-center border" onClick={toggleAudio}>
-              <Image src={`${audioPlaying ? 'https://dl-invitation.ayandesign.am/Vector%20(1).svg' : 'https://dl-invitation.ayandesign.am/Vector%20(2).svg'}`} alt="audio" width={34} height={34} className="cursor-pointer object-contain brightness-98 hover:scale-110 hover:brightness-110 transition-transform duration-400" onClick={() => setAudioPlaying(!audioPlaying)} />
+        </motion.div>
+
+
+        <motion.div
+          initial={{ opacity: 0, y: 80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true, amount: 0.2 }}
+          className="max-w-130 mx-auto bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage:
+              "url('./18573a5cd93765380000d7d7df8875a80701e7c0.jpg')",
+          }}
+        >
+
+          <div className="w-full pt-3.25 pb-1 flex items-center justify-center h-full relative">
+            <div
+              className="w-17 h-17 rounded-full border flex justify-center "
+              onClick={toggleAudio}
+            >
+              <Image
+                src={
+                  audioPlaying
+                    ? "https://dl-invitation.ayandesign.am/Vector%20(1).svg"
+                    : "https://dl-invitation.ayandesign.am/Vector%20(2).svg"
+                }
+                alt="audio"
+                width={34}
+                height={34}
+                className="cursor-pointer object-contain hover:scale-110 transition-transform"
+                onClick={() => setAudioPlaying(!audioPlaying)}
+              />
             </div>
           </div>
-        </div>
+
+
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="w-full h-full flex justify-center gap-4 p-5 flex-col items-center "
+          >
+            <p className="inviteText font-juana leading-[136%] text-[35px] text-center">
+              {t("inviteText1")}
+            </p>
+
+            <p className="max-w-84.5 font-noto-armenian font-light leading-7 text-[18px] text-center">
+              {t("inviteText2")}
+            </p>
+          </motion.div>
+
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <Calendar />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.8,
+              ease: "easeOut",
+            }}
+            viewport={{ once: true, amount: 0.3 }}
+            className="mt-2 p-2"
+          >
+            <p className="font-kotayk text-[35px] leading-[136%] font-normal text-center">
+              {e("title")}
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true, amount: 0.2 }}
+            className="w-full min-h-screen flex flex-col items-center justify-center "
+          >
+              <DayCart />
+              <DayCartSec />
+          </motion.div>
+
+
+        </motion.div>
       </div>
     </>
   );
