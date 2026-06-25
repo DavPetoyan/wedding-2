@@ -238,7 +238,7 @@ export default function Home() {
           </motion.div>
 
           <motion.div className="w-full text-center mt-14">
-            <p className="font-norkirk text-[20px] text-[#18548B] ">{b("res")}</p>
+            <p className=" text-[20px] text-[#18548B] ">{b("res")}</p>
           </motion.div>
           <RSVPForm />
 

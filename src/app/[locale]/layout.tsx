@@ -34,10 +34,10 @@ const vrdznagir = localFont({
   variable: "--font-vrdznagir",
 });
 
-const norkirk = localFont({
-  src: "../fonts/Norkirk.ttf",
-  variable: "--font-norkirk",
-});
+// const norkirk = localFont({
+//   src: "../fonts/Norkirk.ttf",
+//   variable: "--font-norkirk",
+// });
 
 const notoArmenian = localFont({
   src: [
@@ -105,7 +105,6 @@ export default async function LocaleLayout({ children, params }: Props) {
           ${juana.variable}
           ${notoArmenian.variable}
           ${vrdznagir.variable}
-          ${norkirk.variable}
           min-h-screen flex flex-col
         `}
       >
