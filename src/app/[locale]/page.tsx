@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import DayCart from "@/components/dayCart";
 import DayCartSec from "@/components/dayCartSec";
+import Timeline from "@/components/timeline";
 
 export default function Home() {
   const [introDone, setIntroDone] = useState(false);
@@ -198,20 +199,65 @@ export default function Home() {
           >
             <DayCart />
             <DayCartSec />
-            <motion.div className="w-full">
-              <div className="w-full border flex items-center justify-center gap-6 pt-3 ">
-                <div className="relative w-26.75 h-40.25">
-                  <Image src="/harsikpesank1.svg" alt="" fill className="object-contain " />
-                </div>
+            <motion.div
+              className="w-full flex justify-center"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true, amount: 0.3 }}>
+              <motion.div
+                className="w-98.75 flex items-center justify-between gap-6 pt-3"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+              >
+                <motion.div
+                  className="relative w-26.75 h-40.25"
+                  variants={{
+                    hidden: { opacity: 0, y: 40 },
+                    visible: { opacity: 1, y: 0 }
+                  }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <Image src="/harsikpesank1.svg" alt="" fill className="object-contain" />
+                </motion.div>
 
-                <div className="relative w-26.75 h-40.25 ">
-                  <Image src="/harsikpesank2.svg" alt="" fill className="object-contain shadow-xl" />
-                </div>
+                <motion.div
+                  className="relative w-26.75 h-40.25"
+                  variants={{
+                    hidden: { opacity: 0, y: 40 },
+                    visible: { opacity: 1, y: 0 }
+                  }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                  <Image
+                    src="/harsikpesank2.svg"
+                    alt=""
+                    fill
+                    className="object-contain shadow-xl"
+                  />
+                </motion.div>
 
-                <div className="relative w-26.75 h-40.25">
-                  <Image src="/harsikpesank3.svg" alt="" fill className="object-contain " />
-                </div>
-              </div>
+                <motion.div
+                  className="relative w-26.75 h-40.25"
+                  variants={{
+                    hidden: { opacity: 0, y: 40 },
+                    visible: { opacity: 1, y: 0 }
+                  }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
+                  <Image src="/harsikpesank3.svg" alt="" fill className="object-contain" />
+                </motion.div>
+              </motion.div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true, amount: 0.2 }}
+              className="w-full pl-12"
+            >
+              <Timeline />
             </motion.div>
 
           </motion.div>

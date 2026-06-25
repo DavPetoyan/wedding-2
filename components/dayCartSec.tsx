@@ -68,7 +68,7 @@ export default function DayCartSec() {
             viewport={{ once: true }}
             className="font-noto-armenian font-black leading-[136%] text-[15px]"
           >
-            {e("church.title")}
+            {e("church.dayTitle")}
           </motion.p>
         </div>
 
@@ -106,7 +106,7 @@ export default function DayCartSec() {
             viewport={{ once: true }}
             className="mt-4.5 font-noto-armenian font-black leading-[136%] text-[15px]"
           >
-            {e("party.title")}
+            {e("party.dayTitle")}
           </motion.p>
         </div>
 
