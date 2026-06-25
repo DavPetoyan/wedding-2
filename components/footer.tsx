@@ -15,7 +15,7 @@ export default function Footer() {
                         backgroundImage:
                             "url('/photo_2026-06-25_19-33-32.jpg')",
                     }}>
-                        <p className='font-vrdznagir text-[#DEDAD5] text-[20px] leading-1.7 ' > {n("madeBy")} </p>
+                        <p className='font-vrdznagir text-[#DEDAD5] text-[20px] leading-1.7 ' > {n("madeBy")}sdf </p>
                     </div>
                 </div>
             </motion.div>
