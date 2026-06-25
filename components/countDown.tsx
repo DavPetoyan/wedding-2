@@ -24,36 +24,36 @@ export default function CountDown() {
         <Countdown
             date={endingDate}
             renderer={({ days, hours, minutes, seconds }) => (
-                <div className="flex justify-center gap-6">
+                <div className="mt-10 flex justify-center gap-6">
                     <div className="flex flex-col items-center">
-                        <span className="font-bruney text-[45px]">
+                        <span className="medTime font-bruney text-[45px]">
                             {String(days).padStart(2, "0")}
                         </span>
                         <span className="font-noto-armenian uppercase font-light text-[14px] leading-1.7">{f("day")}</span>
                     </div>
 
-                    <span className="font-bruney text-[45px]">:</span>
+                    <span className="medTime font-bruney text-[45px]">:</span>
 
                     <div className="flex flex-col items-center">
-                        <span className="font-bruney text-[45px]">
+                        <span className="medTime font-bruney text-[45px]">
                             {String(hours).padStart(2, "0")}
                         </span>
                         <span className="font-noto-armenian uppercase font-light text-[14px] leading-1.7"> {f("hours")} </span>
                     </div>
 
-                    <span className="font-bruney text-[45px]">:</span>
+                    <span className="medTime font-bruney text-[45px]">:</span>
 
                     <div className="flex flex-col items-center">
-                        <span className="font-bruney text-[45px]">
+                        <span className="medTime font-bruney text-[45px]">
                             {String(minutes).padStart(2, "0")}
                         </span>
                         <span className="font-noto-armenian uppercase font-light text-[14px] leading-1.7">{f("minute")}</span>
                     </div>
 
-                    <span className="font-bruney text-[45px]">:</span>
+                    <span className="medTime font-bruney text-[45px]">:</span>
 
                     <div className="flex flex-col items-center">
-                        <span className="font-bruney text-[45px]">
+                        <span className="medTime font-bruney text-[45px]">
                             {String(seconds).padStart(2, "0")}
                         </span>
                         <span className="font-noto-armenian uppercase font-light text-[14px] leading-1.7 ">{f("second")}</span>

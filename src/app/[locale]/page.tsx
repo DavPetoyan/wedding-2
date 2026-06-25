@@ -71,6 +71,7 @@ export default function Home() {
   const t = useTranslations("Hero");
   const e = useTranslations("Events");
   const b = useTranslations("resolve")
+  const f = useTranslations("Footer")
   return (
     <>
       <audio ref={audioRef}>
@@ -205,7 +206,7 @@ export default function Home() {
             <motion.div
               className="w-full flex justify-center"
             >
-              <div className="w-98.75  flex items-center justify-between gap-6 pt-3 ">
+              <div className="medImg w-98.75  flex items-center justify-between pt-3 ">
                 <div className="relative w-26.75 h-40.25">
                   <Image src="/harsikpesank1.svg" alt="" fill className="object-contain " />
                 </div>
@@ -224,16 +225,17 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true, amount: 0.2 }}
-              className="w-full pl-12"
+              className="medDays w-full pl-12"
             >
               <Timeline />
             </motion.div>
 
           </motion.div>
-          <motion.div className="w-full flex justify-center" initial={{ opacity: 0, x: 60 }}
+          <motion.div className="w-full flex flex-col justify-center" initial={{ opacity: 0, x: 60 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true, amount: 0.2 }}>
+              <p className="font-noto-armenian font-normal leading-1.7 text-center text-[20px] ">{f("timeLeft")} </p>
             <CountDown />
           </motion.div>
 
