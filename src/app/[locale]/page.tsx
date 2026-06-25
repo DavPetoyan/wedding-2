@@ -196,8 +196,24 @@ export default function Home() {
             viewport={{ once: true, amount: 0.2 }}
             className="w-full min-h-screen flex flex-col items-center justify-center "
           >
-              <DayCart />
-              <DayCartSec />
+            <DayCart />
+            <DayCartSec />
+            <motion.div className="w-full">
+              <div className="w-full border flex items-center justify-center gap-6 pt-3 ">
+                <div className="relative w-26.75 h-40.25">
+                  <Image src="/harsikpesank1.svg" alt="" fill className="object-contain " />
+                </div>
+
+                <div className="relative w-26.75 h-40.25 ">
+                  <Image src="/harsikpesank2.svg" alt="" fill className="object-contain shadow-xl" />
+                </div>
+
+                <div className="relative w-26.75 h-40.25">
+                  <Image src="/harsikpesank3.svg" alt="" fill className="object-contain " />
+                </div>
+              </div>
+            </motion.div>
+
           </motion.div>
 
 

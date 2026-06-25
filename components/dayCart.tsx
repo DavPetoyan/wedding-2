@@ -68,7 +68,7 @@ export default function DayCart() {
                     <Link
                         href="https://yandex.com/maps/10262/yerevan/house/sundukyan_poghots_17/YE0YcwdhS0MDQFpqfX5xcXxrbA==/?indoorLevel=1&ll=44.501263%2C40.200088&z=17.3"
                         target="_blank"
-                        className="font-noto-armenian text-[16px] mb-5.25 border rounded-[26px] w-full  text-center mt-5.25 py-3.5 block"
+                        className="font-noto-armenian  text-[16px] mb-5.25 border rounded-[26px] w-full  text-center mt-5.25 py-3.5 block"
                     >
                         {e("groomHouse.map")}
                     </Link>

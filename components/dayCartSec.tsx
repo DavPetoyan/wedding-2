@@ -48,7 +48,7 @@ export default function DayCartSec() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true, amount: 0.3 }}
-        className="w-74 h-full flex flex-col "
+        className="w-73 h-full flex flex-col "
       >
         <div className="w-full h-full  text-center flex justify-center flex-col items-center">
           <motion.div

@@ -9,22 +9,6 @@ import { routing } from "@/src/i18n/routing";
 
 import localFont from "next/font/local";
 
-// const kotayk = localFont({
-//   src: [
-//     {
-//       path: "../fonts/Kotayk-Regular.woff2",
-//       weight: "400",
-//       style: "normal",
-//     },
-//     {
-//       path: "../fonts/Kotayk-Italic.woff2",
-//       weight: "400",
-//       style: "italic",
-//     },
-//   ],
-//   variable: "--font-kotayk",
-// });
-
 const kotayk = localFont({
   src: "../fonts/Kotayk.ttf",
   variable: "--font-kotayk",
