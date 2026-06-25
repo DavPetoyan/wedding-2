@@ -29,6 +29,16 @@ const bruney = localFont({
   variable: "--font-bruney",
 });
 
+const vrdznagir = localFont({
+  src: "../fonts/Vrdznagir.otf",
+  variable: "--font-vrdznagir",
+});
+
+const norkirk = localFont({
+  src: "../fonts/Norkirk.ttf",
+  variable: "--font-norkirk",
+});
+
 const notoArmenian = localFont({
   src: [
     {
@@ -94,6 +104,8 @@ export default async function LocaleLayout({ children, params }: Props) {
           ${kotayk.variable}
           ${juana.variable}
           ${notoArmenian.variable}
+          ${vrdznagir.variable}
+          ${norkirk.variable}
           min-h-screen flex flex-col
         `}
       >

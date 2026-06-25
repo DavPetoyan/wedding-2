@@ -47,6 +47,12 @@
       "time": "17:00"
     }
   },
+  "Timeline": {
+    "day": "день",
+    "hours": "час",
+    "minute": "мин",
+    "second": "сек"
+  },
   "Footer": {
     "timeLeft": "Осталось...",
     "over": "Time over",
